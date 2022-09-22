@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="inner">
+    <h1>New Employee Form</h1>
+    <form [formGroup]="employeeForm" (ngSubmit)="saveEmployee(employeeForm.value)" (click)="timeChange()">
+      <input type="text" placeholder="Your employee id" formControlName="empid">
+
+      <span *ngIf="employeeForm.get('empid')?.errors?.['required'] && employeeForm.get('empid')?.touched">
+       Id is required
+      </span>
+      <input type="text" placeholder="Your Name" formControlName="name">
+
+      <span *ngIf="employeeForm.get('name')?.errors?.['required'] && employeeForm.get('name')?.touched">
+        Name is required
+      </span>
+      <input type="text" formControlName="dob" placeholder="Date of birth" onfocus="this.type='date'">
+
+      <span *ngIf="employeeForm.get('dob')?.errors?.['required'] && employeeForm.get('dob')?.touched">
+       dob is required
+      </span>
+      <input type="text" placeholder="Your Designation" formControlName="designation">
+      <span *ngIf="employeeForm.get('designation')?.errors?.['required'] && employeeForm.get('designation')?.touched">
+        Designation is required
+      </span>
+      <input type="text" placeholder="Your Organization" formControlName="organzn">
+      <span *ngIf="employeeForm.get('organzn')?.errors?.['required'] && employeeForm.get('organzn')?.touched">
+        Organization is required
+      </span>
+      <input type="text" placeholder="Gender" formControlName="gender">
+      <span *ngIf="employeeForm.get('gender')?.errors?.['required'] && employeeForm.get('gender')?.touched">
+        Gender is required
+      </span>
+      <input type="Time" formControlName="time" readonly>
+
+      <input type="text" placeholder="Upload your photo" onclick="this.type='file'" formControlName="file">
+      <span *ngIf="employeeForm.get('file')?.errors?.['required'] && employeeForm.get('file')?.touched">
+        File is required
+      </span>
+      <div class="actions">
+        <button type="submit">Save</button>
+        <a (click)="clearForm()">Clear</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

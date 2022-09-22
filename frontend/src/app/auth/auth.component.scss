@@ -1,0 +1,24 @@
+.container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+.inner{
+  height: 250px;
+  width: 500px;
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+  padding: 30px;
+}
+input{
+  height:50px;
+  margin-bottom: 40px;
+}
+button{
+  height:50px;
+  width:45%;
+  background-color:#3e425b;
+  color:white;
+}
